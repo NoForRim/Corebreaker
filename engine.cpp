@@ -57,6 +57,7 @@ void Engine::start() {
         std::cout << "[ OK ]: timer init" << std::endl;
     }
 
+    al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
     display = al_create_display(Engine::WIDTH, Engine::HEIGHT);
     if (!display) {
         throw std::runtime_error("[FAIL]: display init");

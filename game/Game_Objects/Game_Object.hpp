@@ -1,29 +1,17 @@
-#ifndef Scope_Game_Object
-#define Scope_Game_Object
+#ifndef Game_Object_hpp
+#define Game_Object_hpp
 
 class Game_Object {
-    public:
-        double pos_x;
-        double pos_y;
-        virtual void physics() = 0;
-        virtual void render() = 0;
-        virtual ~Game_Object() = default;
-};
-/*
-class Enemy{
-    public:
-        double pos_x;
-        double pos_y;
-        double HP;
-        void move(double move_x, double move_y);
-        bool is_alive(double HP);
-}
+public:
+    double pos_x, pos_y;
+    double width, height;
+    bool is_alive = true;
 
-class Consumables{
-    public:
-        double pos_x;
-        double pos_y;
-}
-*/
+    Game_Object(double x, double y) : pos_x(x), pos_y(y), width(0), height(0) {}
+    virtual ~Game_Object() {}
+
+    virtual void physics() = 0;
+    virtual void render() = 0;
+};
 
 #endif

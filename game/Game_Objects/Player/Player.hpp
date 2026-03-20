@@ -12,11 +12,19 @@
 
 class Player : public Game_Object {
     public:
-        double HP;
+        double HP = 100.0;
+        double speed = 1.0;
+        double vel_x;
+        double vel_y;
+        
+
+        Player(double x, double y);
+
         void move(double move_x, double move_y);
-        bool is_alive(int HP);
-        void physics() override {}
-        void render() override {}
+        bool is_alive();
+
+        void physics() override;
+        void render() override;
 };
 
 #endif
