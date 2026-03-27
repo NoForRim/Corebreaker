@@ -14,7 +14,7 @@
 #include "Game_Objects/Enemies/Mobs/Stalker.hpp"
 #include "Game_Objects/Enemies/Bosses/Boss.hpp"
 #include "Game_Objects/Enemies/Bosses/Mega_Dummy.hpp"
-#include "../engine.hpp"
+#include "engine.hpp"
 #include "Screen.hpp"
 #include "Visuals/Renderer.hpp"
 #include "Game_Objects/Game_Object.hpp"
