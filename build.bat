@@ -10,8 +10,11 @@ g++ ^
 game/main.cpp ^
 game/Game_Objects/Game_Object.cpp ^
 game/Game_Objects/Player/Player.cpp ^
-game/Game_Objects/Enemies/Dummy.cpp ^
-game/Game_Objects/Enemies/Crawling_Dummy.cpp ^
+game/Game_Objects/Projectiles/Bullet.cpp ^
+game/Game_Objects/Enemies/Mobs/Dummy.cpp ^
+game/Game_Objects/Enemies/Mobs/Crawling_Dummy.cpp ^
+game/Game_Objects/Enemies/Mobs/Stalker.cpp ^
+game/World/Room.cpp ^
 engine.cpp ^
 -o bin/program.exe ^
 -static-libgcc ^
@@ -19,12 +22,12 @@ engine.cpp ^
 -std=c++17 ^
 -Iallegro/include ^
 -Lallegro/lib ^
--lallegro ^
--lallegro_main ^
--lallegro_primitives ^
--lallegro_image ^
+-lallegro_ttf ^
 -lallegro_font ^
--lallegro_ttf
+-lallegro_image ^
+-lallegro_primitives ^
+-lallegro ^
+-lallegro_main 
 
 :: Если компиляция успешна — запускаем
 if %ERRORLEVEL% EQU 0 (
