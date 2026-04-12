@@ -4,13 +4,13 @@
 #include "../../../Screen.hpp"
 
 void Dummy::physics() {
-    for (auto obj : Screen::objects) {
-        if (!obj || obj == this || !obj->is_alive) continue;
+    for (auto& obj : Screen::objects) {
+        if (!obj || obj.get() == this || !obj->is_alive) continue;
 
         if (obj->pos_x > pos_x && obj->pos_x < pos_x + width &&
             obj->pos_y > pos_y && obj->pos_y < pos_y + height) {
             
-            Bullet* bullet = dynamic_cast<Bullet*>(obj);
+            Bullet* bullet = dynamic_cast<Bullet*>(obj.get());
             if (bullet) {
                 this->is_alive = false; 
                 bullet->is_alive = false; 

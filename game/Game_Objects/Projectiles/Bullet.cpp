@@ -39,7 +39,7 @@ void Bullet::physics() {
         return;
     }
 
-    for (auto obj : Screen::objects) {
+    for (auto& obj : Screen::objects) {
         if (obj && obj->is_enemy && obj->is_alive) {
             // Проверка коллизии AABB (пересечение прямоугольников)
             if (pos_x < obj->pos_x + obj->width && pos_x + width > obj->pos_x &&
@@ -49,7 +49,7 @@ void Bullet::physics() {
                 
                 Damage_Event ev;
                 ev.attacker = (Game_Object*)Screen::player;
-                ev.victim = obj;
+                ev.victim = obj.get();
                 ev.damage = this->damage;
                 ev.penetration = this->penetration; // ДОБАВИТЬ ЭТО
                 ev.type = this->type;               // И ЭТО

@@ -435,9 +435,9 @@ void Player::handle_shooting() {
         props.color = al_map_rgb(255, 255, 0);
 
         /// Спавним пулю, передавая наши настроенные props
-        Screen::spawn(new Bullet(pos_x + width/2, 
-                                 pos_y + height/2, 
-                                 tx, ty, props));
+        Screen::spawn(std::make_unique<Bullet>(pos_x + width/2, 
+                                               pos_y + height/2, 
+                                               tx, ty, props));
                                  
         fire_cooldown = FIRE_COOLDOWN;
     }

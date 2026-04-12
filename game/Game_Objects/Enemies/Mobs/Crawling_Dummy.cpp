@@ -17,11 +17,11 @@ void Crawling_Dummy::physics() {
     }
 
     // 2. Коллизия ТОЛЬКО с пулями
-    for (auto obj : Screen::objects) {
+    for (auto& obj : Screen::objects) {
         if (!obj->is_alive) continue;
 
         // Используем dynamic_cast, чтобы отличить пулю от игрока
-        Bullet* b = dynamic_cast<Bullet*>(obj);
+        Bullet* b = dynamic_cast<Bullet*>(obj.get());
         if (b) {
             // Простая проверка: попала ли пуля (точка) в квадрат врага
             if (b->pos_x > pos_x && b->pos_x < pos_x + width &&
