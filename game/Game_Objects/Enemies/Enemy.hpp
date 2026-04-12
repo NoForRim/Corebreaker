@@ -11,6 +11,8 @@ public:
         this->is_enemy = true;
     }
 
+    virtual void init_ui() {}
+
     void take_damage(float damage, float kx, float ky) override {
         hp -= damage;
         // Импульс от удара

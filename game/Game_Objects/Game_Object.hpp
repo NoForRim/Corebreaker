@@ -15,6 +15,8 @@ public:
     
     float hp = 0; 
     float max_hp = 0;
+    float armor = 0.0f;               // Базовая броня (физ)
+    float magic_res_base = 0.0f;      // Базовый резист (магия) в диапазоне 0.0 - 1.0
 
     bool is_alive = true;
     bool is_enemy = false;

@@ -15,7 +15,7 @@ game/Game_Objects/Enemies/Mobs/Dummy.cpp ^
 game/Game_Objects/Enemies/Mobs/Crawling_Dummy.cpp ^
 game/Game_Objects/Enemies/Mobs/Stalker.cpp ^
 game/World/Room.cpp ^
-engine.cpp ^
+game/engine.cpp ^
 -o bin/program.exe ^
 -static-libgcc ^
 -static-libstdc++ ^
